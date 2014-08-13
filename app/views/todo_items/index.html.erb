@@ -5,6 +5,7 @@
 	<li id="<%= dom_id(todo_item) %>">
 		<%= todo_item.content %>
 		<%= link_to "Edit", edit_todo_list_todo_item_path(todo_item) %>
+		<%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "You are about to delete \"#{todo_item.content}\" from the #{@todo_list.title}!" } %>
 	</li>
 	<% end %>
 </ul>
